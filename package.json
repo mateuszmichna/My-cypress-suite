@@ -1,0 +1,29 @@
+{
+  "name": "tsh-cypress-suite",
+  "version": "1.0.0",
+  "description": "TSH-home-task",
+  "main": "index.js",
+  "scripts": {
+    "test": "test-e2e",
+    "cypress": "$(npm bin)/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateuszmichna/TSH-cypress-suite.git"
+  },
+  "keywords": [
+    "TSH",
+    "mail",
+    "service",
+    "cypress"
+  ],
+  "author": "Mateusz Michna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateuszmichna/TSH-cypress-suite/issues"
+  },
+  "homepage": "https://github.com/mateuszmichna/TSH-cypress-suite#readme",
+  "devDependencies": {
+    "cypress": "^8.3.0"
+  }
+}
