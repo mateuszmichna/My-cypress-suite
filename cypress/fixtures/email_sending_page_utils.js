@@ -9,7 +9,11 @@ export var emailSendingPageUtils = {
     surname_field_copy: 'Surname',
     surname_field_error: 'The "Surname" field is required!',
     newsletter_type_field_copy: 'Newsletter type',
-    newsletter_type_field_error: 'The "Newsletter type" field is required!',
+    newsletter_type_field_error: 'The "newsletter type" field is required!',
+    starting_date_field_copy: 'Starting date',
+    starting_date_field_error: 'The "Start date" field is required!',
+    ending_date_field_copy: 'Ending date',
     sex_buttons_copy: 'Sex',
-    agreement_link: 'https://google.pl'
+    agreement_link: 'https://google.pl',
+    agreement_error_copy: 'Accepting terms and condition is required!'
 }

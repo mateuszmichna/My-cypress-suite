@@ -20,6 +20,8 @@ describe('Landing tests', () => {
         cy.get(emailSendingPageSelectors.surname_field).should('be.visible').should('not.to.be.disabled')
         cy.get(emailSendingPageSelectors.newsletter_type_field_title).should('be.visible').invoke('text').should('eq', emailSendingPageUtils.newsletter_type_field_copy)  
         cy.get(emailSendingPageSelectors.newsletter_type_field).should('be.visible').should('not.to.be.disabled')
+        cy.get(emailSendingPageSelectors.starting_date_field_title).should('be.visible').invoke('text').should('eq', emailSendingPageUtils.starting_date_field_copy)  
+        cy.get(emailSendingPageSelectors.ending_date_field).should('be.visible').should('not.to.be.disabled')
         cy.get(emailSendingPageSelectors.sex_buttons_title).should('be.visible').invoke('text').should('eq', emailSendingPageUtils.sex_buttons_copy)
         cy.get(emailSendingPageSelectors.sex_buttons).should('be.visible').should('not.to.be.disabled')
         cy.get(emailSendingPageSelectors.agreement_checkmark).should('not.to.be.disabled').should('not.to.be.checked')
