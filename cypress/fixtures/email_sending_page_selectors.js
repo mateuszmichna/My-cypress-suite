@@ -2,8 +2,8 @@ export var emailSendingPageSelectors = {
     
     email_field: '#newsletter_email',
     email_field_title: 'label[title="E-mail"]',
-    name_field: '#newsletter_name',
-    name_field_title: 'label[title="First name"]',
+    first_name_field: '#newsletter_name',
+    first_name_field_title: 'label[title="First name"]',
     surname_field: '#newsletter_surname',
     surname_field_title: 'label[title="Surname"]',
     newsletter_type_field: '#newsletter_newsType',
