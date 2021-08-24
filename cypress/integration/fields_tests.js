@@ -1,10 +1,7 @@
 import { emailSendingPageSelectors } from "../fixtures/email_sending_page_selectors"
 import { emailSendingPageUtils } from "../fixtures/email_sending_page_utils"
+import { today_date, yesterday_date } from "../fixtures/date_serializer";
 
-var options = { year: 'numeric', month: 'long', day: 'numeric' };
-const date = new Date()
-const today_date = new Date().toLocaleDateString("en-US", options)
-const yesterday_date = new Date(date.setDate(date.getDate() - 1)).toLocaleDateString("en-US", options)
 
 describe('Fields tests', () => {
     beforeEach(() => {
