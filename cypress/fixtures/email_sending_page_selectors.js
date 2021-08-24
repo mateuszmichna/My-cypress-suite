@@ -21,6 +21,8 @@ export var emailSendingPageSelectors = {
     calendar_input: 'input[class="ant-calendar-input "]',
     sex_buttons: '#newsletter_Sex > .ant-radio-wrapper > .ant-radio',
     sex_buttons_title: 'label[title="Sex"]',
+    sex_button_male: '#newsletter_Sex input[value="male"]',
+    sex_button_female: '#newsletter_Sex input[value="female"]',
     agreement_checkmark: '#newsletter_agreement',
     agreement_link: 'a',
     agreement_error: 'Accepting',

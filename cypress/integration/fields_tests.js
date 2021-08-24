@@ -4,7 +4,6 @@ import { emailSendingPageUtils } from "../fixtures/email_sending_page_utils"
 var options = { year: 'numeric', month: 'long', day: 'numeric' };
 const date = new Date()
 const today_date = new Date().toLocaleDateString("en-US", options)
-const today_day = new Date().getDate();
 const yesterday_date = new Date(date.setDate(date.getDate() - 1)).toLocaleDateString("en-US", options)
 
 describe('Fields tests', () => {
@@ -74,5 +73,13 @@ describe('Fields tests', () => {
       cy.get(emailSendingPageSelectors.calendar_input).type('1999-01-01')
       cy.get(emailSendingPageSelectors.header).click()
       cy.get(emailSendingPageSelectors.ending_date_field).invoke('text').should('eq', '')
+    })
+
+    it('tests if the radio buttons and checkbox work properly', () => {
+      cy.get(emailSendingPageSelectors.sex_button_male).click().should('be.checked')
+      cy.get(emailSendingPageSelectors.sex_button_female).should('not.be.checked')
+      cy.get(emailSendingPageSelectors.sex_button_female).click().should('be.checked')
+      cy.get(emailSendingPageSelectors.sex_button_male).should('not.be.checked')
+      cy.get(emailSendingPageSelectors.agreement_checkmark).click().should('be.checked').click().should('not.be.checked')
     })
   })
