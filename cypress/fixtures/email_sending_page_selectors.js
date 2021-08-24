@@ -1,5 +1,5 @@
 export var emailSendingPageSelectors = {
-    
+    header: '.ant-layout-header',
     email_field: '#newsletter_email',
     email_field_title: 'label[title="E-mail"]',
     first_name_field: '#newsletter_name',
@@ -18,6 +18,7 @@ export var emailSendingPageSelectors = {
     starting_date_day_cell_2: '"] > div',
     ending_date_field: '#newsletter_endDate',
     ending_date_field_title: 'label[title="End date"]',
+    calendar_input: 'input[class="ant-calendar-input "]',
     sex_buttons: '#newsletter_Sex > .ant-radio-wrapper > .ant-radio',
     sex_buttons_title: 'label[title="Sex"]',
     agreement_checkmark: '#newsletter_agreement',
