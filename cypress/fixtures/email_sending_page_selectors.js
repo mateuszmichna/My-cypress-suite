@@ -14,6 +14,8 @@ export var emailSendingPageSelectors = {
     newsletter_selected_option: 'div[class=ant-select-selection-selected-value]',
     starting_date_field: '#newsletter_startDate',
     starting_date_field_title: 'label[title="Starting date"]',
+    starting_date_day_cell_1: 'td[title="',
+    starting_date_day_cell_2: '"] > div',
     ending_date_field: '#newsletter_endDate',
     ending_date_field_title: 'label[title="End date"]',
     sex_buttons: '#newsletter_Sex > .ant-radio-wrapper > .ant-radio',
