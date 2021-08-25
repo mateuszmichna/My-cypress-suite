@@ -28,7 +28,7 @@ describe('Landing tests', () => {
             }})
         })   
 
-    it('Checks if the First Name and Surname are proper', () => {
+    it('Sends the email', () => {
         var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + today_date + emailSendingPageSelectors.starting_date_day_cell_2
         cy.visit('/')
         cy.get(emailSendingPageSelectors.email_field).type(mainEmail)
@@ -41,20 +41,23 @@ describe('Landing tests', () => {
         cy.get(emailSendingPageSelectors.agreement_checkmark).click()
         cy.get(emailSendingPageSelectors.submit_button).click()
         cy.contains('Successfully added to newsletter').should('be.visible')
-        cy.contains('OK').click().then(() => {
+        cy.contains('OK').click()
+        cy.contains('Successfully added to newsletter').should('not.exist')
+        .then(() => {
             cy.request({
                 method: 'GET',
                 url: baseApiUrl + 'addresses/' + mainEmail + '/messages/',
                 headers: {
                     'Mailsac-Key': apiKey
                 }})
-        .then(($response) => {
-            message_id = $response.body[0]._id;
-            cy.request({
-                method: 'GET',
-                url: baseApiUrl + 'text/'+ mainEmail + '/' + message_id,
-                headers: {
-                    'Mailsac-Key': apiKey
+                    .then(($response) => {
+                        message_id = $response.body[0]._id;
+                        cy.wrap(message_id).as('mes_id')
+                        cy.request({
+                        method: 'GET',
+                        url: baseApiUrl + 'text/'+ mainEmail + '/' + message_id,
+                        headers: {
+                         'Mailsac-Key': apiKey
                 }})
           })
         })
