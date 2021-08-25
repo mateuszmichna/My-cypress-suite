@@ -28,7 +28,7 @@ describe('Landing tests', () => {
             }})
         })   
 
-    it('Sends the email', () => {
+    it('Checks if the First Name and Surname are proper', () => {
         var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + today_date + emailSendingPageSelectors.starting_date_day_cell_2
         cy.visit('/')
         cy.get(emailSendingPageSelectors.email_field).type(mainEmail)
