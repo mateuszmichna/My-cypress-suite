@@ -29,6 +29,7 @@ describe('Landing tests', () => {
         })   
 
     it('Checks if the First Name and Surname are proper', () => {
+        //fill the form
         var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + today_date + emailSendingPageSelectors.starting_date_day_cell_2
         cy.visit('/')
         cy.get(emailSendingPageSelectors.email_field).type(mainEmail)
@@ -43,7 +44,10 @@ describe('Landing tests', () => {
         cy.contains('Successfully added to newsletter').should('be.visible')
         cy.contains('OK').click()
         cy.contains('Successfully added to newsletter').should('not.exist')
+        //email should be sent
         .then(() => {
+            //get the inbox and
+            cy.wait(4000) //wait just in case
             cy.request({
                 method: 'GET',
                 url: baseApiUrl + 'addresses/' + mainEmail + '/messages/',
@@ -51,14 +55,20 @@ describe('Landing tests', () => {
                     'Mailsac-Key': apiKey
                 }})
                     .then(($response) => {
+                        //store the id of the newest mail
                         message_id = $response.body[0]._id;
-                        cy.wrap(message_id).as('mes_id')
+                        //and get the text of the this message
                         cy.request({
                         method: 'GET',
                         url: baseApiUrl + 'text/'+ mainEmail + '/' + message_id,
                         headers: {
                          'Mailsac-Key': apiKey
-                }})
+                        }})
+                            .then(($response) => {
+                            //check if there is a proper name and surname within the email message
+                            cy.wrap($response.body).should('include', 'Commander Shepard')
+                        })
+                 
           })
         })
     })
