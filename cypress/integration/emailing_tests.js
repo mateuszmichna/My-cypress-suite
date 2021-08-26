@@ -5,30 +5,32 @@ import { today_date } from "../fixtures/date_serializer";
 var message_id = null
 
 describe('Landing tests', () => {
-    //beforeEach('Delete all the messages in the inbox', () => {
+    beforeEach('Delete all the messages in the inbox', () => {
         
-        //it would work only if the Mailsac pricing will be non-free, there are no private emails at free plan
-        //and you can't delete messages from public inbox, leaving this commented as a example what
-        //should be done in beforeEach hook
-        
+        //commented request would work only if the Mailsac pricing will be non-free, 
+        //there are no private emails at free plan :(
+        //you can't delete messages from public inbox
+        //leaving this commented as a example what should be done in beforeEach hook
+        //Instead of that I decided to use the afterEach hook to delete 
+        //the particular message and put checking in beforeEach if the inbox is empty
+        //and the empty inbox is the entry condition 
+        //I know that cleaning the state should be perfmormed in the before hook, but here I can't :(
         //cy.request({
             //method: 'DELETE',
             //url: baseApiUrl + 'addresses/' + mainEmail + '/messages/',
             //headers: {
                 //'Mailsac-Key': apiKey
             //}})
-    //})
-  
-    it.skip('gets the inbox', () => {
         cy.request({
             method: 'GET',
             url: baseApiUrl + 'addresses/' + mainEmail + '/messages/',
             headers: {
                 'Mailsac-Key': apiKey
-            }})
-        })   
+            }}).its('body').should('be.empty')
+            //check if the inbox is empty
+    })
 
-    it('Checks if the First Name and Surname are proper', () => {
+    it('Checks if the First Name and Surname are proper in the received email', () => {
         //fill the form
         var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + today_date + emailSendingPageSelectors.starting_date_day_cell_2
         cy.visit('/')
@@ -46,16 +48,16 @@ describe('Landing tests', () => {
         cy.contains('Successfully added to newsletter').should('not.exist')
         //email should be sent
         .then(() => {
-            //get the inbox and
+            //get the inbox
             cy.wait(4000) //wait just in case
             cy.request({
                 method: 'GET',
                 url: baseApiUrl + 'addresses/' + mainEmail + '/messages/',
                 headers: {
                     'Mailsac-Key': apiKey
-                }})
-                    .then(($response) => {
+                }}).then(($response) => {
                         //store the id of the newest mail
+                        cy.wrap($response.body).should('not.be.empty')
                         message_id = $response.body[0]._id;
                         //and get the text of the this message
                         cy.request({
@@ -71,5 +73,13 @@ describe('Landing tests', () => {
                  
           })
         })
+    })
+    afterEach('delete', () => {
+        cy.request({
+            method: 'DELETE',
+            url: baseApiUrl + 'addresses/'+ mainEmail + '/messages/' + message_id,
+            headers: {
+             'Mailsac-Key': apiKey
+            }})
     })
 })
