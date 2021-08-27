@@ -4,8 +4,8 @@
   "description": "TSH-home-task",
   "main": "index.js",
   "scripts": {
-    "test": "test-e2e",
-    "cypress": "$(npm bin)/cypress open"
+    "cy:open": "$(npm bin)/cypress open",
+    "cy:test": "cypress run --browser chrome"
   },
   "repository": {
     "type": "git",
