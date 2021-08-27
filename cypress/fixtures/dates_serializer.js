@@ -1,7 +1,7 @@
 //this function exists because of lack of consistency in date formatting
+var dateFormat = require("dateformat");
 
-function ConvertDates(t) {
-    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+function ConvertDates(t) {;
     const d = new Date()
     if (t == 'tommorow') {
         d.setDate(d.getDate() + 1)} 
@@ -13,9 +13,9 @@ function ConvertDates(t) {
         d.setMonth(d.getMonth() + 1)
         d.setDate(d.getDate() - 1)} 
     return {
-        "ISO": d.toISOString().split('T')[0],
-        "locale": d.toLocaleDateString(),
-        "locale_us": d.toLocaleDateString("en-US", options)
+        "ISO": dateFormat(d, 'yyyy-mm-dd'),
+        "locale": dateFormat(d, 'dd/mm/yyyy'),
+        "locale_us": dateFormat(d, 'mmmm dd, yyyy')
     }
   } 
 

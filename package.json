@@ -25,5 +25,8 @@
   "homepage": "https://github.com/mateuszmichna/TSH-cypress-suite#readme",
   "devDependencies": {
     "cypress": "^8.3.0"
+  },
+  "dependencies": {
+    "dateformat": "^4.5.1"
   }
 }

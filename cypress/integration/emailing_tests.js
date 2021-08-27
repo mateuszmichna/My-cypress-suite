@@ -1,6 +1,6 @@
 import { baseApiUrl, apiKey, mainEmail} from '../../cypress.json'
 import { emailSendingPageSelectors } from "../fixtures/email_sending_page_selectors"
-import { ConvertDates, month_later_date_iso, today_date_locale, end_of_subscription_date } from "../fixtures/dates_serializer";
+import { ConvertDates } from "../fixtures/dates_serializer";
 
 var message_id = null
 
@@ -164,7 +164,7 @@ describe('Emailing tests', () => {
                             //check if there are a proper dates within the email message
                             cy.wrap($response.body)
                             .should('include', 'You will get your first newsletter beginning ' + ConvertDates('today').locale)
-                            .should('include', 'Your subscription will be activated until ' + ConvertDates('subscription_end').locale)
+                            .should('include', 'Your subscription will be activated until ' + ConvertDates('month_later').locale)
                             
                         })
                  
