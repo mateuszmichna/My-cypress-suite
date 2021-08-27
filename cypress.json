@@ -3,5 +3,10 @@
     "baseApiUrl": "https://mailsac.com/api/",
     "apiKey": "k_YSo0UQgEM5xk91oY68OZibKpqM4gohwhpDSQGPnIAagf3",
     "mainEmail": "tshhomework@mailsac.com",
-    "defaultCommandTimeout": 10000
+    "defaultCommandTimeout": 10000,
+    "testFiles": [
+        "landing_tests.js",
+        "fields_tests.js",
+        "emailings_tests.js"
+      ]
 }
