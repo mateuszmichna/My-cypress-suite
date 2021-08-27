@@ -1,10 +1,7 @@
 import { emailSendingPageSelectors } from "../fixtures/email_sending_page_selectors"
 import { emailSendingPageUtils } from "../fixtures/email_sending_page_utils"
+import { ConvertDates } from "../fixtures/dates_serializer";
 
-var options = { year: 'numeric', month: 'long', day: 'numeric' };
-const date = new Date()
-const today_date = new Date().toLocaleDateString("en-US", options)
-const yesterday_date = new Date(date.setDate(date.getDate() - 1)).toLocaleDateString("en-US", options)
 
 describe('Fields tests', () => {
     beforeEach(() => {
@@ -54,8 +51,8 @@ describe('Fields tests', () => {
     })
 
     it('tests the Starting Date field and calendar', () => {
-      var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + today_date + emailSendingPageSelectors.starting_date_day_cell_2
-      var yesterday_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + yesterday_date + emailSendingPageSelectors.starting_date_day_cell_2
+      var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + ConvertDates('today').locale_us + emailSendingPageSelectors.starting_date_day_cell_2
+      var yesterday_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + ConvertDates('yesterday').locale_us + emailSendingPageSelectors.starting_date_day_cell_2
       cy.get(emailSendingPageSelectors.starting_date_field).click()
       cy.get(today_cell_selector).should('have.attr','aria-disabled','false')
       cy.get(yesterday_cell_selector).should('have.attr','aria-disabled','true')
@@ -65,8 +62,8 @@ describe('Fields tests', () => {
     })
 
     it('tests the Ending Date field and calendar', () => {
-      var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + today_date + emailSendingPageSelectors.starting_date_day_cell_2
-      var yesterday_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + yesterday_date + emailSendingPageSelectors.starting_date_day_cell_2
+      var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + ConvertDates('today').locale_us + emailSendingPageSelectors.starting_date_day_cell_2
+      var yesterday_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + ConvertDates('yesterday').locale_us + emailSendingPageSelectors.starting_date_day_cell_2
       cy.get(emailSendingPageSelectors.ending_date_field).click()
       cy.get(today_cell_selector).should('have.attr','aria-disabled','false')
       cy.get(yesterday_cell_selector).should('have.attr','aria-disabled','true')

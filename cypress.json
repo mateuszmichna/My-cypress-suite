@@ -1,3 +1,12 @@
 {
-    "baseUrl": "http://qa-recruitment-newsletter.s3-website-eu-west-1.amazonaws.com"
+    "baseUrl": "http://qa-recruitment-newsletter.s3-website-eu-west-1.amazonaws.com",
+    "baseApiUrl": "https://mailsac.com/api/",
+    "apiKey": "k_YSo0UQgEM5xk91oY68OZibKpqM4gohwhpDSQGPnIAagf3",
+    "mainEmail": "tshhomework@mailsac.com",
+    "defaultCommandTimeout": 10000,
+    "testFiles": [
+        "landing_tests.js",
+        "fields_tests.js",
+        "emailings_tests.js"
+      ]
 }
