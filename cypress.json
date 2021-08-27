@@ -7,6 +7,6 @@
     "testFiles": [
         "landing_tests.js",
         "fields_tests.js",
-        "emailings_tests.js"
+        "emailing_tests.js"
       ]
 }

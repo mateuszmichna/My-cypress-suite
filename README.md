@@ -10,7 +10,7 @@ This suite will automatically record tests and make screenshots when assertions 
 
 ## Prerequisites
 
-The only requirement for this project is to have Node.js version 14 installed on your machine. Refer to the .node-version file for the exact version.
+The only requirement for this project is to have Node.js version 14 installed on your machine.
 
 ## Commands
 - `npm run cy:open` - opens Cypress UI
