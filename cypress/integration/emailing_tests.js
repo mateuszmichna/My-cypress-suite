@@ -4,7 +4,7 @@ import { ConvertDates, month_later_date_iso, today_date_locale, end_of_subscript
 
 var message_id = null
 
-describe('Landing tests', () => {
+describe('Emailing tests', () => {
     
     beforeEach('Delete all the messages in the inbox', () => {
         
@@ -31,7 +31,7 @@ describe('Landing tests', () => {
             //check if the inbox is empty
     })
 
-    it('Checks if the First Name and Surname are proper in the received email', () => {
+    it('tests if the First Name and Surname are proper in the received email', () => {
         //fill the form 
         var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + ConvertDates('today').locale_us + emailSendingPageSelectors.starting_date_day_cell_2
         cy.visit('/')
@@ -76,7 +76,7 @@ describe('Landing tests', () => {
         })
     })
 
-    it('Checks if the Newsletter Type is proper in the received email', () => {
+    it('tests if the Newsletter Type is proper in the received email', () => {
         //fill the form
         var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + ConvertDates('today').locale_us + emailSendingPageSelectors.starting_date_day_cell_2
         cy.visit('/')
@@ -123,7 +123,7 @@ describe('Landing tests', () => {
         })
     })
 
-    it('Checks if the dates are proper in the received email', () => {
+    it('tests if the dates are proper in the received email', () => {
         //fill the form
         var today_cell_selector = emailSendingPageSelectors.starting_date_day_cell_1 + ConvertDates('today').locale_us + emailSendingPageSelectors.starting_date_day_cell_2
         cy.visit('/')
