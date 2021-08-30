@@ -164,7 +164,7 @@ describe('Emailing tests', () => {
                             //check if there are a proper dates within the email message
                             cy.wrap($response.body)
                             .should('include', 'You will get your first newsletter beginning ' + ConvertDates('today').locale)
-                            .should('include', 'Your subscription will be activated until ' + ConvertDates('month_later').locale)
+                            .should('include', 'Your subscription will be activated until ' + ConvertDates('subscription_end').locale)
                             
                         })
                  
