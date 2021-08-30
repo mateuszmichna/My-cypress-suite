@@ -15,7 +15,8 @@ This suite will automatically record tests and make screenshots when assertions 
 
 The only requirement for this project is to have Node.js version 14 installed on your machine.
 
-## Commands
+## Commands to run the tests
+- `npm install` - to install dateformat library
 - `npm run cy:open` - opens Cypress UI
 - `npm run cy:test` - runs tests in terminal
 
