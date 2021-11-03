@@ -8,14 +8,14 @@ function ConvertDates(t) {;
     else if (t == 'yesterday') {
         d.setDate(d.getDate() - 1)} 
     else if (t == 'month_later') {
-        d.setMonth(d.getMonth() + 1)}
-    else if (t == 'subscription_end') {
         d.setMonth(d.getMonth() + 1)
-        d.setDate(d.getDate() - 1)} 
+        d.setDate(d.getDate() + 1)}
+    else if (t == 'subscription_end') {
+        d.setMonth(d.getMonth() + 1)} 
     return {
         "ISO": dateFormat(d, 'yyyy-mm-dd'),
         "locale": dateFormat(d, 'dd/mm/yyyy'),
-        "locale_us": dateFormat(d, 'mmmm dd, yyyy')
+        "locale_us": dateFormat(d, 'mmmm d, yyyy')
     }
   } 
 
