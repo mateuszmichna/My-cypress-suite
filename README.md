@@ -20,5 +20,5 @@ The only requirement for this project is to have Node.js version 14 installed on
 
 
 ## Commands to run test by creating docker image and run them inside this image
-- `docker build -it my_cypress_image:1.0.0 .` - to create the docker image
+- `docker build -t my_cypress_image:1.0.0 .` - to create the docker image
 - `docker run -it -v $PWD:/My-Cypress-Suite -t my_cypress_image:1.0.0` - to run the tests based on builded image, recording and sending report to the dashboard enabled by default

@@ -1,7 +1,7 @@
 {
-  "name": "tsh-cypress-suite",
+  "name": "my-cypress-suite",
   "version": "1.0.0",
-  "description": "TSH-home-task",
+  "description": "Small Cypress suite to show how my mind works",
   "main": "index.js",
   "scripts": {
     "cy:open": "$(npm bin)/cypress open",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mateuszmichna/TSH-cypress-suite.git"
+    "url": "git+https://github.com/mateuszmichna/my-cypress-suite.git"
   },
   "keywords": [
     "mateusz",
@@ -21,9 +21,9 @@
   "author": "Mateusz Michna",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mateuszmichna/TSH-cypress-suite/issues"
+    "url": "https://github.com/mateuszmichna/my-cypress-suite/issues"
   },
-  "homepage": "https://github.com/mateuszmichna/TSH-cypress-suite#readme",
+  "homepage": "https://github.com/mateuszmichna/my-cypress-suite#readme",
   "devDependencies": {
     "cypress": "^8.7.0"
   }
