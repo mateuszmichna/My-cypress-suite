@@ -8,5 +8,6 @@
         "landing_tests.js",
         "fields_tests.js",
         "emailing_tests.js"
-      ]
+      ],
+      "video": false
 }
