@@ -15,8 +15,12 @@ This suite will automatically record tests and make screenshots when assertions 
 
 The only requirement for this project is to have Node.js version 14 installed on your machine.
 
-## Commands to run the tests
+## Commands to run the tests without docker
 - `npm install` - to install dateformat library
 - `npm run cy:open` - opens Cypress UI
 - `npm run cy:test` - runs tests in terminal
 
+
+## Commands to run test by creating docker image and run them inside this image
+- `docker build -t my_cypress_image:1.0.0 .` - to create the docker image
+- `docker run -it -v $PWD:/TSH-Cypress-Suite -t my_cypress_image:1.0.0` - to run the tests based on builded image
