@@ -12,4 +12,4 @@ COPY ./cypress.json .
 COPY ./cypress ./cypress
 #Install the dependencies
 RUN npm install
-CMD ["npm", "run", "cy:test"]
+CMD ["npm", "run", "cy:test:record"]
