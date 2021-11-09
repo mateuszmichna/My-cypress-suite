@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "$(npm bin)/cypress open",
-    "cy:test": "cypress run --browser chrome --headless",
-    "cy:test:record": "cypress run --browser chrome --headless --record --key 20d81136-8163-4828-9ef8-4a1d98a8b6a0"
+    "cy:test": "cypress run --browser <browser> --headless",
+    "cy:test:record": "cypress run --browser <browser> --headless --record --key <your_key>"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mateuszmichna/TSH-cypress-suite.git"
   },
   "keywords": [
-    "TSH",
-    "mail",
-    "service",
+    "mateusz",
+    "michna",
+    "suite",
     "cypress"
   ],
   "author": "Mateusz Michna",
@@ -26,8 +26,5 @@
   "homepage": "https://github.com/mateuszmichna/TSH-cypress-suite#readme",
   "devDependencies": {
     "cypress": "^8.7.0"
-  },
-  "dependencies": {
-    "dateformat": "^4.5.1"
   }
 }
