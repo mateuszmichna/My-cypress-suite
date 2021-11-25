@@ -6,6 +6,8 @@ This is my look at the Cypress testing suite. It is very simple, but dockerized.
 
 This suite will not automatically record tests but it will make screenshots when assertions would fail. Moreover, folders `screenshots` and `videos` are git ignored.
 
+Manually added `data-cy` params to the elements used in test-cases to provide scalability.
+
 ## Prerequisites
 
 The only requirement for this project is to have Node.js version 14 installed on your machine.
