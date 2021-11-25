@@ -1,8 +1,0 @@
-{
-    "projectId": "...",
-    "defaultCommandTimeout": 10000,
-    "testFiles": [
-        "example_test_case.js"
-      ],
-      "video": false
-}
