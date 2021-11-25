@@ -5,7 +5,7 @@ const Tags = props => {
   const tags = props.tags;
   if (tags) {
     return (
-      <div className="tag-list">
+      <div className="tag-list" data-cy="tag-list-in-sidebar">
         {
           tags.map(tag => {
             const handleClick = ev => {

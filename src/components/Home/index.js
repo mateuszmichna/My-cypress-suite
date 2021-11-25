@@ -52,7 +52,7 @@ class Home extends React.Component {
             <MainView />
 
             <div className="col-md-3">
-              <div className="sidebar">
+              <div className="sidebar" data-cy="popular-tags-sidebar">
 
                 <p>Popular Tags</p>
 

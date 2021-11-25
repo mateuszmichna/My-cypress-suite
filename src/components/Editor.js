@@ -108,6 +108,7 @@ class Editor extends React.Component {
                       className="form-control form-control-lg"
                       type="text"
                       placeholder="Article Title"
+                      data-cy="article-title-field"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
@@ -117,6 +118,7 @@ class Editor extends React.Component {
                       className="form-control"
                       type="text"
                       placeholder="What's this article about?"
+                      data-cy="article-description-field"
                       value={this.props.description}
                       onChange={this.changeDescription} />
                   </fieldset>
@@ -126,6 +128,7 @@ class Editor extends React.Component {
                       className="form-control"
                       rows="8"
                       placeholder="Write your article (in markdown)"
+                      data-cy="article-body-field"
                       value={this.props.body}
                       onChange={this.changeBody}>
                     </textarea>
@@ -136,6 +139,7 @@ class Editor extends React.Component {
                       className="form-control"
                       type="text"
                       placeholder="Enter tags"
+                      data-cy="article-tags-input"
                       value={this.props.tagInput}
                       onChange={this.changeTagInput}
                       onKeyUp={this.watchForEnter} />
@@ -159,6 +163,7 @@ class Editor extends React.Component {
                   <button
                     className="btn btn-lg pull-xs-right btn-primary"
                     type="button"
+                    data-cy="article-publish-button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
                     Publish Article

@@ -15,6 +15,7 @@ const YourFeedTab = props => {
       <li className="nav-item">
         <a  href=""
             className={ props.tab === 'feed' ? 'nav-link active' : 'nav-link' }
+            data-cy="your-feed-tab-on-home-page"
             onClick={clickHandler}>
           Your Feed
         </a>
@@ -34,6 +35,7 @@ const GlobalFeedTab = props => {
       <a
         href=""
         className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' }
+        data-cy="global-feed-tab-on-home-page"
         onClick={clickHandler}>
         Global Feed
       </a>
