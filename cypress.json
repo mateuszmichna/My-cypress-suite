@@ -1,17 +1,17 @@
 {
     "baseUrl": "http://localhost:4100/",
     "baseApiUrl": "https://api.realworld.io/api",
-    "projectId": "zoob94",
+    "projectId": "gsrsrh",
     "defaultCommandTimeout": 10000,
     "retries": 2,
     "env":{
       "createPostUrl": "/editor",
-      "branch": "living_example",
+      "branch": "main",
       "message": "final form",
-      "author email": "mateusz.michna@espeo.eu",
+      "author email": "mat.michna@gmail.com",
       "author": "Mateusz Michna",
-      "sha": "0039f3c0d80f2ddfb57aa2b6e5a6c2c14e20276f",
-      "remote": "https://MateuszMichna@bitbucket.org/espeoeu/automated-tests-cypress.git"
+      "sha": "",
+      "remote": "https://github.com/mateuszmichna/My-cypress-suite.git"
         },
     "testFiles": [
         "dummy_tests_spec.js"

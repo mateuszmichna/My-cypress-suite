@@ -6,7 +6,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://MateuszMichna@bitbucket.org/espeoeu/automated-tests-cypress.git"
+    "url": "git+https://github.com/mateuszmichna/My-cypress-suite.git"
   },
   "keywords": [
     "Mateusz",
@@ -18,9 +18,9 @@
   "author": "Mateusz Michna",
   "license": "ISC",
   "bugs": {
-    "url": "https://bitbucket.org/espeoeu/automated-tests-cypress/issues"
+    "url": "https://github.com/mateuszmichna/My-cypress-suite/issues"
   },
-  "homepage": "https://bitbucket.org/espeoeu/automated-tests-cypress#readme",
+  "homepage": "https://github.com/mateuszmichna/My-cypress-suite#readme",
   "devDependencies": {
     "cross-env": "^5.1.4",
     "cypress": "^8.7.0",
@@ -51,6 +51,6 @@
     "eject": "react-scripts eject",
     "cy:open": "$(npm bin)/cypress open",
     "cy:test": "cypress run --browser chrome --headless",
-    "cy:test:record": "cypress run --browser chrome --headless --record --key ecfa31cd-a09d-4b57-8b84-5f0b3541f5a5"
+    "cy:test:record": "cypress run --browser chrome --headless --record --key 8cd22006-4922-4f8f-a4ef-b2a0c4820276"
   }
 }
