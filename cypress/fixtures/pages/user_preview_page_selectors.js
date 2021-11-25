@@ -1,5 +1,5 @@
 export const userPreviewPage = {
-    "avatar": "div > img[src$='smiley-cyrus.jpeg']",
-    "username": "h4"
+    "avatar": "[data-cy=user-img-in-profile-preview]",
+    "username": "[data-cy=username-in-profile-preview]"
 
 }

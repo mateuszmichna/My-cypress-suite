@@ -1,7 +1,7 @@
 export const createArticlePage = {
-    "article_title_field" : "input[class$='-lg']",
-    "article_description_field" : "input[placeholder$='about?']",
-    "article_body_field" : "textarea",
-    "article_tags_field": "input[placeholder$='tags']",
-    "publish_button" : "button[class$='primary']"
+    "article_title_field" : "[data-cy=article-title-field]",
+    "article_description_field" : "[data-cy=article-description-field]",
+    "article_body_field" : "[data-cy=article-body-field]",
+    "article_tags_field": "[data-cy=article-tags-input]",
+    "publish_button" : "[data-cy=article-publish-button]"
 }
