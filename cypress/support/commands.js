@@ -28,20 +28,22 @@ import "cypress-localstorage-commands"
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('generateUser', () => {
-    let firstname = faker.name.firstName();
-    let secondname = faker.name.lastName();
-    const fullname = firstname + secondname;
-    const password = 'p@ssw0rd';
-    const email = faker.internet.email();
 
     const user = {
-        "login": fullname,
-        "email": email,
-        "password": password
+        "login": faker.name.firstName()+faker.name.lastName(),
+        "email": faker.internet.email(),
+        "password": 'p@ssw0rd'
     }
-    cy.writeFile('../../fixtures/utils/user.json', user)
+    cy.writeFile(Cypress.env('userDataFilepath'), user)
 })
 
+Cypress.Commands.add('clearUserFile', () => {
+    cy.writeFile(Cypress.env('userDataFilepath'), '')
+})
+
+Cypress.Commands.add('wrapUser', () => {
+    cy.readFile(Cypress.env('userDataFilepath')).then((user) => {
+    cy.wrap(user).as('User')})})
 
 Cypress.Commands.add('createUser', (login, email, password) => {
     cy.request({
@@ -51,9 +53,8 @@ Cypress.Commands.add('createUser', (login, email, password) => {
         {username: login,
          email: email,
          password: password}}
-    }
+        })}
     )
-})
 
 Cypress.Commands.add('login', (email, password) => {
     cy.request({
@@ -64,5 +65,5 @@ Cypress.Commands.add('login', (email, password) => {
          password: password}}
         }).then(($res) => {
             cy.setLocalStorage('jwt', $res.body.user.token)
-        })
- })
+        })}
+    )

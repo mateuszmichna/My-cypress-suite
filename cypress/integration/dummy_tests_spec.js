@@ -5,19 +5,18 @@ import { userPreviewPage } from '../fixtures/pages/user_preview_page_selectors'
 import { naviBarUtils } from '../fixtures/utils/navibar_page_utils'
 
 
-describe('This is some dummy suite with loggied user', () => {
+describe('This is some dummy suite with logged in user', () => {
     
     before('Generate user', () => {
         cy.generateUser().then(() =>{ 
-            cy.readFile('../../fixtures/utils/user.json').then((user) => {
+            cy.readFile(Cypress.env('userDataFilepath')).then((user) => {
+                cy.task('log', `\nI am using user with these specs:\n\n username: ${user.login} \n email: ${user.email} \n password: ${user.password}\n\n`)
                 cy.createUser(user.login, user.email, user.password)})
         })
     })
 
     beforeEach('Login via API', () => {
-        cy.clearLocalStorage()
-        cy.readFile('../../fixtures/utils/user.json').then((user) => {
-            cy.wrap(user).as('User')})
+        cy.wrapUser()
         cy.get('@User').then((user) => {
             cy.login(user.email, user.password)})
         cy.visit('/')
@@ -61,6 +60,12 @@ describe('This is some dummy suite with loggied user', () => {
 
 
     afterEach('Describe what is happening after each test case', () => {
+        //Every task that should be run after each test
+    })
+
+    after('Clear user data', () => {
         //Unfortunately Conduit app does not provide deleting the account via API. Otherwise it should be here
+        cy.clearUserFile()
+        cy.removeLocalStorage('jwt')
     })
 })
